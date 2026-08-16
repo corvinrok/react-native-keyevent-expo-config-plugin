@@ -20,7 +20,7 @@ const withIosAppDelegateImport = (config: any) => {
             offset: 1,
             comment: '//',
         });
-        return { ...config, modResults: newConfig };
+        return { ...config, modResults: { ...config.modResults, contents: newConfig.contents } };
     });
     return newConfig;
 };
@@ -135,7 +135,7 @@ const withIosAppDelegateBody = (config: any) => {
         });
         return {
             ...config,
-            modResults: newConfig,
+            modResults: { ...config.modResults, contents: newConfig.contents },
         };
     });
     return newConfig;
@@ -157,7 +157,7 @@ const withAndroidMainActivityImport = (config: any) => {
         });
         return {
             ...config,
-            modResults: newConfig,
+            modResults: { ...config.modResults, contents: newConfig.contents },
         };
     });
     return newConfig;
@@ -220,7 +220,7 @@ const withAndroidMainActivityBody = (config: any) => {
         });
         return {
             ...config,
-            modResults: newConfig,
+            modResults: { ...config.modResults, contents: newConfig.contents },
         };
     });
     return newConfig;
